@@ -1,0 +1,21 @@
+﻿@model List<GuitarShop.Models.Guitar>
+
+<div class="container-fluid default-padding">
+    <div class="text-info text-center default-padding">
+        <h2>Choose your guitar and click on it</h2>
+    </div>
+
+    <div class="row">
+        @foreach (var guitar in Model)
+        {
+            @Html.Partial("_Guitar", guitar)
+        }
+    </div>
+</div>
+
+@if (ViewBag.Message != null)
+{
+    <script>
+        alert("@ViewBag.Message")
+    </script>
+}

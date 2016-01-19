@@ -1,0 +1,11 @@
+﻿@model GuitarShop.Models.Guitar
+
+<div class="col-md-4 col-sm-3cols text-center">
+    <a href="@Url.Action("Buy", "Home", new {guitarId = Model.Id})">
+        <img src=@Url.Content($"~/Content/Images/{Model.Id}.jpg") class="img-responsive img-center" height="200" width="200" />
+    </a>
+    <label>@Model.Name</label>
+    <div>
+        <label>@Model.Price</label>
+    </div>
+</div>

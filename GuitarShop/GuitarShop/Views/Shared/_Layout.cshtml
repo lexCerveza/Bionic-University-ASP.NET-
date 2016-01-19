@@ -1,0 +1,22 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Guitar Shop</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/bootstrap.css">
+    <link rel="stylesheet" href="~/Content/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header class="jumbotron text-center">
+        <h1>Welcome to official Guitar Shop</h1>
+        <a href="@Url.Action("Index", "Home")">Home</a>
+    </header>
+
+    @RenderBody()
+
+    <footer class="text-center navbar-fixed-bottom">
+        <p>Guitar Shop TM. 2016 All rights reserved</p>
+    </footer>
+</body>
+</html>

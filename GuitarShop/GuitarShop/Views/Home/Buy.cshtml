@@ -1,0 +1,52 @@
+﻿@model GuitarShop.Models.Purchase
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Buy";
+}
+
+<div class="container">
+    
+    <div class="jumbotron">
+        <p>@ViewBag.SelectedGuitar.Description</p>
+    </div>
+
+    <form method="POST" role="form">
+        <input type="hidden" name="GuitarName" value="@ViewBag.SelectedGuitar.Name"/>
+        <div class="form-group">
+            <label>Enter your name </label>
+            @Html.ValidationMessageFor(model => model.Name)
+            <div>
+                @Html.EditorFor(model => model.Name, new {htmlattributes = new {@class = "form-control"}})
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Enter your e-mail </label>
+            @Html.ValidationMessageFor(model => model.Email)
+            <div>
+                @Html.EditorFor(model => model.Email, new {htmlattributes = new {@class = "form-control"}})
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Enter your phone </label>
+            @Html.ValidationMessageFor(model => model.Phone)
+            <div>
+                @Html.EditorFor(model => model.Phone, new {htmlattributes = new {@class = "form-control"}})
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Enter your adrress </label>
+            @Html.ValidationMessageFor(model => model.ShippingAddress)
+            <div>
+                @Html.EditorFor(model => model.ShippingAddress, new {htmlattributes = new {@class = "form-control"}})
+            </div>
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-default">Order Now!</button>
+        </div>
+    </form>
+</div>

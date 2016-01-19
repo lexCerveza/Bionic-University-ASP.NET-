@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Biis page</title>
+	</head>
+<body>
+	<form name="form1" method="post">
+		<div>
+			<biisButton name="button1" onClick="Button_OnClick, label1">Click Me</biisButton>
+		</div>
+		<br/>
+		<div>
+			<biisLabel name="label1"></biisLabel>
+		</div>
+		<div>
+			<biisLabel name="label2"></biisLabel>
+		</div>
+	</form>
+</body>
+</html>
