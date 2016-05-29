@@ -1,0 +1,161 @@
+"Толстый" сервер - "тонкий" клиент
+
+FireFox -> http://google.com -> APACHE <- файл (возвращает только файл)
+
+Для чего нужны порты :
+Skype -> свой сервак us
+WOT -> свой сервак bel
+
+Кабель - один. Айпишник тоже. Как узнать, какому приложению был послан пакет ?
+Порт - софтверная фигня, которая определяет, какому приложению был послан пакет.
+
+80 - стандартный порт для сайта на серваке.
+
+Балансировщик.
+1000 запросов - максимум, у нас 1000000000 запросов.
+Веб-ферма. 
+
+[lb] - hostname
+
+[m1] [m2] [m3]
+
+Headerы риквеста отличаются от хедеров респонса, тем, что информация в хедерах клиета шлет информацию о клиенте серверу, чтобы
+он знал, как себя вести и какой респонс отдавать клиенту.
+
+IIS - тупая программа, умеет читать реквест сервера и редиректит его в файловую систему. Чтобы обрабатывать эти файлы, нужен экстеншн.  
+
+Разница между сайтом и аппликухой.
+
+asp.net = ISAPI extension 
+Суть экстеншенов - если на IIS сервер приходит запрос на файл с каким-то расширением,
+то екстеншины возвращают файл с прописанным расширением, перед этим пропроцессив их внутри.
+
+IIS 
+
+/a.html - запрос 
+/a.aspx
+/a.gif 
+
+IIS должен обработать эти файлы
+
+Ставим ASP.NET и в IIS ставит правило для обработки.
+
+Задание - IIS должен нормально хостить ASP.NET приложения.
+GET/POST response, header
+
+HTML - input/ Не input
+
+.aspx - .ashx
+
+Как оформить код - 
+/// - публичный метод, публичный класс
+Сейчас - под всеми.
+
+Как работают в командах. Agile/Scrum
+
+К web-application можно настроить доступ через порт, к сайту - нет.
+Веб-сайт - контейнер для веб-аппликейшенов.
+
+Веб-сайт шарят общую память
+Веб-приложение - имеет собственную память, изолированную от других.
+
+Сниффер - устройство, прочитать в инете.
+
+ДЗ Чем отличаются веб-сайты от веб-аппликейшенов ?
+
+Web.config - что это ?
+NuGet
+
+Content-Type, Content-Length
+
+Handler - deprecated stuff 
+
+ДЗ - парсер.
+txt=Paul&btn=Click - input 
+lbl = Hello + txt.Text - business logic
+span = Hello Paul - ouput
+
+Input - Request(string) -> Output - Response(string)
+
+Создается объект Page. Создаются другие объекты с атрибутами парсером.
+Присваиваются делегаты. Создается дерево объектов.
+Какие из ивентов вызвать -> по POST запросу определить. Он всего лишь один - клик (input type - submit)
+
+ToString() для объекта.
+Render()
+
+Page lifecycle
+S - application waiting for request. Init to Request and Response = null;
+I - Request is grabbed. Init, "new" to controls = null
+L - Property (isPostBack -> do nothing)
+V - validate user input for security
+E - event. If isPostBack == true, call things on controls
+R - render HTML
+
+U - unload 
+
+
+a -> b
+
+0001
+0002
+0003
+sdggasdsadsad -> generated with password, alice knows
+
+
+
+b -> a (003)
+
+b -> 0003 -> e -> 0004 -> a
+многоразовый ключ
+
+Machine.config IIS 
+
+Client-state management : 
+cookies - non-executed files. text files. http protocol feature. server sends cookies, remembers users.
+authentication token
+
+User -> Login Form (username/paswword) -> Server
+	Random Token (ahsvdjsamdsavd) <- 
+Next requests : user sends cookie with request
+
+set-cookie:asdvasyudfasgdi
+set-expire:0, -1 
+
+stateless protocol - all requests are independent
+
+
+PostBackUrl - дз, как работает
+
+ViewState = true/false
+
+ViewState - webform mechanism, to save the state of controls.
+base64
+
+Application state, session state
+UrlState
+
+Session - storage on server. 
+
+Each tab shares cookies.
+New browser - no
+
+don't use sessions, use cookies, bitch
+sessions store only secure data, there should be much less data
+
+max-age, expires.
+Как установить cookie relative expiration - дз.
+
+Login, Main1, Main2, Register
+Webconfig - register page.
+
+PageLoad - reads cookie auth-stuff -> if not found -> redirects to Login
+FormsAuthentication.RedirectFromLoginPage();
+
+authentication mode="Forms"
+851 page in MCTS book
+
+Handlers - generate dynamic response
+Modules - "filters" from http. Reacts on each request in application. Logging, authentication.
+
+_ -> not accessable to users
